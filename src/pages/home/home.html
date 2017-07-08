@@ -1,0 +1,127 @@
+<ion-header  no-border>
+  <ion-navbar color="colorheader" no-border-bottom >
+    <ion-title >Mapa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<div id="linea">
+</div>
+
+
+<ion-content>
+
+  <ion-row>
+    <ion-item no-lines class="ion-item" id="content-cat-btn" >
+      <ion-scroll scrollX="true" class="item">
+
+        <div class="btn-select " (click)="filterCategory('unidad')"  [ngClass]="{'select-cat': 'unidad' == currentCat }">
+          <div class="i-cat">
+            <!--<ion-img src="../../assets/img/cat_food.png"></ion-img>-->
+            <img src="assets/img/cat_uni.png">
+          </div>
+          <span>Unidades</span>
+        </div>
+        <div class="btn-select " (click)="filterCategory('comida')" [ngClass]="{'select-cat': 'comida' == currentCat }">
+          <div class="i-cat">
+            <img src="assets/img/cat_food.png">
+          </div>
+          <span>Comida</span>
+        </div>
+        <div class="btn-select">
+          <div class="i-cat">
+            <img src="assets/img/cat_parking.png">
+          </div>
+          <span>Parking</span>
+        </div>
+        <div class="btn-select ">
+          <div class="i-cat">
+            <img src="assets/img/cat_reci.png">
+          </div>
+          <span>Reciclaje</span>
+        </div>
+        <div class="btn-select ">
+          <div class="i-cat">
+            <img src="assets/img/cat_print.png">
+          </div>
+          <span>Impresión</span>
+        </div>
+        <div class="btn-select ">
+          <div class="i-cat">
+            <img src="assets/img/cat_stage.png">
+          </div>
+          <span>Auditorios</span>
+        </div>
+        <div class="btn-select ">
+          <div class="i-cat">
+            <img src="assets/img/cat_sport.png">
+          </div>
+          <span>Deporte</span>
+        </div>
+
+
+      </ion-scroll>
+    </ion-item>
+  </ion-row>
+
+<!--<button ion-button round (click)="filterCategory('edificio')">Edificios</button>
+<button ion-button round (click)="filterCategory('reciclaje')">Reciclaje</button>
+-->
+
+  <!--<ion-header>
+    <ion-toolbar>
+      <ion-segment>
+        <ion-segment-button  (click)="filterCategory('edificio')">
+          Efificios
+        </ion-segment-button>
+        <ion-segment-button (click)="filterCategory('reciclaje')">
+          Reciclaje
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>-->
+
+  <!--<ion-list>
+    <ion-item class="text" *ngFor="let item of items | async">
+      
+      
+      {{item.nombre}}
+      
+      <p><strong>Id: </strong>{{ item.$key }}</p>
+      <p><strong>Telefono: </strong>{{item.telefono}}</p>
+      <p><strong>Coordenadas: </strong>{{item.latitud}},{{item.longitud}}</p>
+       <button [ngClass]="{'btnFav': false}" (click)="addFav(item)" ion-button outline icon-only item-right>
+        <ion-icon name="star"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>-->
+  
+  <!--<ion-fab top right edge >
+    <button (click)="establecerGeo()" ion-fab tappable>
+       <ion-icon name="ios-locate"></ion-icon>
+    </button>
+  </ion-fab>-->
+  <div #map id="map"></div>
+
+  <div id="location_info" [ngClass]="{'show': showModal }">
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4> <img src="{{ img }}"> </ion-col>
+        <ion-col col-7>
+          <span class="dato" [ngClass]="{'show': nombre != undefined }"><strong>Nombre: </strong> {{ nombre }}</span>
+
+          <span class="dato" [ngClass]="{'show': telefono != undefined }"><strong>Teléfono: </strong> {{ telefono }}</span>
+
+          <span class="dato" [ngClass]="{'show': email != undefined }"><strong>E-mail: </strong> {{ email }}</span>
+        </ion-col>
+        <ion-col col-1>
+          
+          <!--<ion-icon ion-item (click)="closeModal()" id="close" class="circle-icon" name="close"></ion-icon>-->
+        </ion-col>
+      </ion-row>
+    
+    </ion-grid>
+  </div>
+
+</ion-content>

@@ -1,0 +1,43 @@
+page-login {
+	ion-content{ 
+		background: #fff !important
+	}
+	h5{
+		margin-top: 30px!important;
+		text-align: center;
+		margin-bottom: 40px !important;
+		color: #666C8B;
+		font-weight: 400;
+	}
+	#logo{
+		img{
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.btn-login{
+		max-width: 300px;
+		margin: 0 auto;
+		font-weight: 500;
+		border-radius: 3px;
+		color: #fff;
+		margin: 0 auto;
+	    text-decoration: none;
+	    background-position: 14px 10px !important;
+	    background-repeat: no-repeat !important;
+	    background-size: 28px 28px !important;
+	    font-size: 14px;
+	    line-height: 40px; 
+	    font-family: 'Source Sans Pro', sans-serif;
+	    font-weight: 600;
+	    text-transform: uppercase;
+	    border: 1px solid white;
+  		height: 50px;
+	}
+
+	#btn-g{
+		background: #BF4339;
+		background-image: url("../../assets/img/google.png");
+		margin-bottom: 10px;
+	}
+}
